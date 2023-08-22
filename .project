@@ -1,0 +1,17 @@
+admissionWebhookRuntimeVersion: v0.1.0
+controllerRuntimeVersion: v0.15.0
+envtestKubernetesVersion: 1.26.1
+goModule: github.com/sap/dns-masquerading-operator-cop
+goVersion: "1.19"
+groupName: operator.kyma-project.io
+groupVersion: v1alpha1
+image: dns-masquerading-operator-cop:latest
+kind: DNSMasqueradingOperator
+kubernetesVersion: v0.27.2
+mutatingWebhookEnabled: false
+operatorName: dns-masquerading-operator-cop.cs.sap.com
+owner: SAP SE
+resource: dnsmasqueradingoperators
+spdxLicenseHeaders: true
+validatingWebhookEnabled: false
+version: v0.1.7

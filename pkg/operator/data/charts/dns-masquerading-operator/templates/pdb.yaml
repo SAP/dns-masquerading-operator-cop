@@ -1,0 +1,13 @@
+{{- if ge (int .Values.replicaCount) 2 }}
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: {{ include "dns-masquerading-operator.fullname" . }}
+  labels:
+    {{- include "dns-masquerading-operator.labels" . | nindent 4 }}
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      {{- include "dns-masquerading-operator.selectorLabels" . | nindent 6 }}
+{{- end }}

@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "dns-masquerading-operator.fullname" . }}
+  labels:
+    {{- include "dns-masquerading-operator.labels" . | nindent 4 }}
+spec:
+  ports:
+    - port: 443
+      protocol: TCP
+      targetPort: webhooks
+      name: https
+  selector:
+    {{- include "dns-masquerading-operator.selectorLabels" . | nindent 4 }}
