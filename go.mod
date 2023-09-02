@@ -5,10 +5,10 @@ go 1.21
 require (
 	github.com/pkg/errors v0.9.1
 	github.com/sap/component-operator-runtime v0.1.8
-	k8s.io/apiextensions-apiserver v0.28.0
+	k8s.io/apiextensions-apiserver v0.28.1
 	k8s.io/apimachinery v0.28.1
 	k8s.io/client-go v0.28.1
-	k8s.io/kube-aggregator v0.28.0
+	k8s.io/kube-aggregator v0.28.1
 	sigs.k8s.io/controller-runtime v0.16.1
 )
 
