@@ -872,6 +872,12 @@ spec:
                         type: array
                     type: object
                 type: object
+              enableIngressController:
+                type: boolean
+              enableIstioGatewayController:
+                type: boolean
+              enableServiceController:
+                type: boolean
               image:
                 description: ImageSpec defines the used OCI image
                 properties:

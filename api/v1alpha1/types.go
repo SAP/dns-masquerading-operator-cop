@@ -22,6 +22,9 @@ type DNSMasqueradingOperatorSpec struct {
 	// +optional
 	Image                          component.ImageSpec `json:"image"`
 	component.KubernetesProperties `json:",inline"`
+	EnableServiceController        bool `json:"enableServiceController,omitempty"`
+	EnableIngressController        bool `json:"enableIngressController,omitempty"`
+	EnableIstioGatewayController   bool `json:"enableIstioGatewayController,omitempty"`
 }
 
 // DNSMasqueradingOperatorStatus defines the observed state of DNSMasqueradingOperator.
