@@ -41,7 +41,7 @@ jobs:
         boilerplate-path: hack/boilerplate.go.txt
 
     - name: Check that license headers are correct
-      uses: sap/cs-actions/check-go-license-headers@main
+      uses: sap/cs-actions/check-go-license-headers@test-zk
       with:
         boilerplate-path: hack/boilerplate.go.txt
 
