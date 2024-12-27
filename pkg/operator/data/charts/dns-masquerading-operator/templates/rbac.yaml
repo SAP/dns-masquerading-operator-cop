@@ -91,6 +91,7 @@ rules:
   - get
   - list
   - watch
+  - update
 - apiGroups:
   - dns.cs.sap.com
   resources:
@@ -125,6 +126,7 @@ rules:
   - get
   - list
   - watch
+  - update
 - apiGroups:
   - networking.k8s.io
   resources:
