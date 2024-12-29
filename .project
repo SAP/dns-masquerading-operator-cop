@@ -10,7 +10,7 @@ kind: DNSMasqueradingOperator
 kubernetesVersion: v0.27.2
 mutatingWebhookEnabled: false
 operatorName: dns-masquerading-operator-cop.cs.sap.com
-owner: SAP SE
+owner: SAP SE or an SAP affiliate company and dns-masquerading-operator-cop contributors
 resource: dnsmasqueradingoperators
 spdxLicenseHeaders: true
 validatingWebhookEnabled: false
