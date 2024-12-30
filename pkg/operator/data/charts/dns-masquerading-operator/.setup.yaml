@@ -1,0 +1,53 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: kube-system
+  name: coredns
+data:
+  Corefile: |
+    .:53 {
+        errors
+        health {
+           lameduck 5s
+        }
+        ready
+        kubernetes cluster.local in-addr.arpa ip6.arpa {
+           pods insecure
+           fallthrough in-addr.arpa ip6.arpa
+           ttl 30
+        }
+        prometheus :9153
+        forward . /etc/resolv.conf {
+           max_concurrent 1000
+        }
+        cache 30
+        loop
+        reload
+        loadbalance
+        import custom/*.override
+    }
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: kube-system
+  name: coredns
+spec:
+  selector:
+    matchLabels:
+      k8s-app: kube-dns
+  template:
+    spec:
+      containers:
+      - name: coredns
+        volumeMounts:
+        - mountPath: /etc/coredns/custom
+          name: custom-config-volume
+          readOnly: true
+      volumes:
+      - name: custom-config-volume
+        configMap:
+          defaultMode: 420
+          name: coredns-custom
+          optional: true
