@@ -1,6 +1,6 @@
 # dns-masquerading-operator
 
-![Version: 0.1.70](https://img.shields.io/badge/Version-0.1.70-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.1.68](https://img.shields.io/badge/AppVersion-v0.1.68-informational?style=flat-square)
+![Version: 0.1.84](https://img.shields.io/badge/Version-0.1.84-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: v0.1.84](https://img.shields.io/badge/AppVersion-v0.1.84-informational?style=flat-square)
 
 A Helm chart for https://github.com/sap/dns-masquerading-operator
 
@@ -30,6 +30,8 @@ A Helm chart for https://github.com/sap/dns-masquerading-operator
 | resources.limits.cpu | string | `"100m"` | CPU limit |
 | resources.requests.memory | string | `"128Mi"` | Memory request |
 | resources.requests.cpu | string | `"100m"` | CPU request |
+| dnsPolicy | string | `"ClusterFirst"` |  |
+| hostNetwork | bool | `false` |  |
 | pdb.enabled | bool | `true` | Whether to create a PodDisruptionBudget for the webhook |
 | pdb.labels | object | `{}` | Labels to set on the PodDisruptionBudget |
 | pdb.annotations | object | `{}` | Annotations to set on the PodDisruptionBudget |
